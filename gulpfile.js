@@ -29,6 +29,7 @@ gulp.task('default', function () {
         '\n\r' +
         'SCRIPTS\n\r' +
         'npm run build -> build sass' +
+        'npm run watch -> watch sass' +
         '\n\r'
     );
 });
@@ -43,4 +44,12 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(css_output))
         .pipe(sassdoc(sassdocOptions))
         .resume();
+});
+
+gulp.task('watch', function() {
+    return gulp
+        .watch(css_input, ['sass'])
+        .on('change', function(event) {
+            console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+        });
 });
