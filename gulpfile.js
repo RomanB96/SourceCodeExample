@@ -2,11 +2,14 @@
 var autoprefixer = require('gulp-autoprefixer');
 var babelify     = require('babelify');
 var browserify   = require('browserify');
+var buffer       = require('vinyl-buffer');
 var gulp         = require('gulp');
+var gulpsync     = require('gulp-sync')(gulp);
 var sass         = require('gulp-sass');
 var sassdoc      = require('sassdoc');
 var source       = require('vinyl-source-stream');
 var sourcemaps   = require('gulp-sourcemaps');
+var uglify       = require('gulp-uglify');
 
 
 // Paths
@@ -57,9 +60,10 @@ gulp.task('default', function () {
     );
 });
 
-gulp.task('build', ['css_dev', 'js_dev']);
-gulp.task('watch', ['build', 'css_watch', 'js_watch']);
-gulp.task('release', ['css_release', 'js_release']);
+gulp.task('build', gulpsync.async(['css_dev', 'js_dev']));
+gulp.task('watch', gulpsync.sync(['build', 'watch_builded']));
+gulp.task('watch_builded', gulpsync.async(['css_watch', 'js_watch']));
+gulp.task('release', gulpsync.async(['css_release', 'js_release']));
 
 
 // CSS
