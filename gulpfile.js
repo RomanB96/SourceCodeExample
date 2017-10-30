@@ -10,8 +10,7 @@ var src         = './src';
 var dist        = './dist';
 var css_input   = src + '/css/**/*.scss';
 var css_output  = dist + '/css';
-var css_maps    = css_output + '/maps';
-var css_maps    = css_output + '/maps';
+// var css_maps    = css_output + '/maps';  // Don't work with path
 var css_sassdoc = css_output + '/sassdoc'; 
 
 // sass
@@ -27,8 +26,10 @@ var sassdocOptions = {
 gulp.task('default', function () {
     console.log(
         '\n\r' +
-        'SCRIPTS\n\r' +
+        'SCRIPTS' +
+        '\n\r' +
         'npm run build -> build sass' +
+        '\n\r' +
         'npm run watch -> watch sass' +
         '\n\r'
     );
@@ -39,7 +40,8 @@ gulp.task('sass', function () {
         .src(css_input)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write(css_maps))
+        // .pipe(sourcemaps.write(css_maps))
+        .pipe(sourcemaps.write())
         .pipe(autoprefixer())
         .pipe(gulp.dest(css_output))
         .pipe(sassdoc(sassdocOptions))
