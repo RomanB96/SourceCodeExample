@@ -20,10 +20,15 @@
   },
   "homepage": "https://github.com/RomanB96/SourceCodeExample#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "sassdoc": "^2.4.0"
+    "sassdoc": "^2.4.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
