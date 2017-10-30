@@ -111,5 +111,7 @@ gulp.task('js_release', function () {
         .transform("babelify", transformPresetsOptions)
         .bundle()
         .pipe(source('index.js'))
+        .pipe(buffer())
+        .pipe(uglify())
         .pipe(gulp.dest(js_release));
 });
