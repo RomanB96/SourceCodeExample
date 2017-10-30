@@ -1,0 +1,19 @@
+{
+  "name": "source_code_example",
+  "version": "0.0.0",
+  "description": "Source code example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanB96/SourceCodeExample.git"
+  },
+  "author": "Roman Baran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanB96/SourceCodeExample/issues"
+  },
+  "homepage": "https://github.com/RomanB96/SourceCodeExample#readme"
+}
