@@ -51,15 +51,15 @@ var transformPresetsOptions = {
 gulp.task('default', function () {
     console.log(
         '\n\r' + 'SCRIPTS' + '\n\r' +
-        'npm run build   -> build sass and javascript'   + '\n\r' +
-        'npm run watch   -> watch sass and javascript'   + '\n\r' +
-        'npm run release -> release sass and javascript' + '\n\r'
+        'npm run build'    + '\n\r' +
+        'npm run watch'    + '\n\r' +
+        'npm run release'  + '\n\r'
     );
 });
 
 gulp.task('build', ['css_dev', 'js_dev']);
-gulp.task('watch', ['css_watch']);
-gulp.task('release', ['css_release']);
+gulp.task('watch', ['build', 'css_watch', 'js_watch']);
+gulp.task('release', ['css_release', 'js_release']);
 
 
 // CSS
@@ -75,7 +75,6 @@ gulp.task('css_dev', function () {
         .pipe(sassdoc(sassdocOptions))
         .resume();
 });
-
 gulp.task('css_watch', function() {
     return gulp
         .watch(css_input, ['css_dev'])
@@ -83,7 +82,6 @@ gulp.task('css_watch', function() {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });
 });
-
 gulp.task('css_release', function () {
     return gulp
         .src(css_input)
@@ -100,4 +98,18 @@ gulp.task('js_dev', function () {
         .bundle()
         .pipe(source('index.js'))
         .pipe(gulp.dest(js_output));
+});
+gulp.task('js_watch', function () {
+    return gulp
+        .watch(js_input, ['js_dev'])
+        .on('change', function(event) {
+            console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+        });
+});
+gulp.task('js_release', function () {
+    return browserify(browserifyOptions)
+        .transform("babelify", transformPresetsOptions)
+        .bundle()
+        .pipe(source('index.js'))
+        .pipe(gulp.dest(js_release));
 });
