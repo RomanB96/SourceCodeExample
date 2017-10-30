@@ -13,35 +13,38 @@
 
 <body>
 
-    <a href="#main">Skip to main content.</a>
+    <a href="#main" class="skip--hidden">Skip to main content.</a>
 
-    <header>
-        <h1>Baran Roman</h1>
+    <header class="header">
+        <h1 class="header__title">Baran Roman</h1>
 
-        <nav>
+        <nav class="menu">
             <ul>
-                <li>
-                    <a href="#fakeLink1">Fake Link 1</a>
+                <li class="menu__tab">
+                    <a href="#fakeLink1" class="menu__link">Fake Link 1</a>
                 </li>
-                <li>
-                    <a href="#fakeLink2">Fake Link 2</a>
+                <li class="menu__tab">
+                    <a href="#fakeLink2" class="menu__link">Fake Link 2</a>
+                </li>
+                <li class="menu__tab">
+                    <a href="#fakeLink3" class="menu__link menu__link--disabled">Fake Link 3</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="main">
-        <article>
+    <main id="main" class="main">
+        <article class="article">
             <header>
-                <h2>This is an article</h2>
+                <h2 class="article__title">This is an article</h2>
             </header>
 
-            <section>
+            <section class="article__section cat-section">
                 <header>
-                    <h3>This is the first section of the article with cats</h3>
+                    <h3 class="cat-section__title">This is the first section of the article with cats</h3>
                 </header>
 
-                <picture>
+                <picture class="cat-section__picture">
                     <source srcset="img/cats-max768.jpg 1x, img/cats-max768@2x.jpg 2x" media="(max-width: 768px)">
                     <source srcset="img/cats-max1024.jpg 1x, img/cats-max1024@2x.jpg 2x" media="(max-width: 1024px)">
                     <source srcset="img/cats-min1024.jpg 1x, img/cats-min1024@2x.jpg 2x" media="(min-width: 1024px)">
@@ -49,53 +52,53 @@
                 </picture>
             </section>
 
-            <section>
+            <section class="article__section cities-section">
                 <header>
-                    <h3>This is the second section of the article with Zurich and Munich</h3>
+                    <h3 class="cities-section__title">This is the second section of the article with Zurich and Munich</h3>
                 </header>
 
-                <address>
-                    <p>
+                <address class="cities-section__address">
+                    <p class="cities-section__paragraph">
                         This is
-                        <a href="https://www.google.com/maps/place/Zurich">Zurich</a> and this is
-                        <a href="https://www.google.com/maps/place/Munich" target="_blank">Munich (open in a new tab)</a>.
+                        <a href="https://www.google.com/maps/place/Zurich" class="cities-section__link">Zurich</a> and this is
+                        <a href="https://www.google.com/maps/place/Munich" class="cities-section__link" target="_blank">Munich (open in a new tab)</a>.
                     </p>
 
-                    <p>Contact me:</p>
+                    <p class="cities-section__paragraph">Contact me:</p>
                     <ul>
-                        <li>
-                            <a href="tel:+393334445555">(+39) 333 444 5555</a>
-                            <details>
+                        <li class="cities-section__contact">
+                            <a href="tel:+393334445555" class="cities-section__contact-link phone">(+39) 333 444 5555</a>
+                            <details class="cities-section__contact-details">
                                 <summary>(Fake number)</summary>
                                 <p>But you already know it</p>
                             </details>
                         </li>
-                        <li>
-                            <a href="mailto:fakeATromanbaranDOTnet">Email</a>
+                        <li class="cities-section__contact">
+                            <a href="mailto:fakeATromanbaranDOTnet" class="cities-section__contact-link email">Email</a>
                         </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/baran-roman">Linkedin</a>
+                        <li class="cities-section__contact">
+                            <a href="https://www.linkedin.com/in/baran-roman" class="cities-section__contact-link">Linkedin</a>
                         </li>
-                        <li>
-                            <a href="skype:live:roman_fake?call">Skype</a>
+                        <li class="cities-section__contact">
+                            <a href="skype:live:roman_fake?call" class="cities-section__contact-link skype">Skype</a>
                         </li>
                     </ul>
                 </address>
             </section>
         </article>
 
-        <button>Click me to load the second article by AJAX</button>
+        <button class="ajaxButton">Click me to load the second article by AJAX</button>
 
     </main>
 
-    <aside>
+    <aside class="aside">
         <header>
-            <h2>Useless sidebar</h2>
+            <h2 class="aside__title">Useless sidebar</h2>
         </header>
-        <button>Secret button to a random API</button>
+        <button class="apiButton">Secret button to a random API</button>
     </aside>
 
-    <footer>
+    <footer class="footer">
         <p>Roman Baran © 2017</p>
     </footer>
 
