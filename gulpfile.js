@@ -5,6 +5,7 @@ var browserify   = require('browserify');
 var buffer       = require('vinyl-buffer');
 var gulp         = require('gulp');
 var gulpsync     = require('gulp-sync')(gulp);
+var htmlmin      = require('gulp-htmlmin');
 var sass         = require('gulp-sass');
 var sassdoc      = require('sassdoc');
 var source       = require('vinyl-source-stream');
@@ -16,19 +17,26 @@ var uglify       = require('gulp-uglify');
 var src     = './src';
 var build   = './build';
 var release = './release';
+// HTML
+var html_input   = src + '/**/*.html';
+var html_release = release;
 // CSS
 var css_input   = src + '/css/**/*.scss';
-var css_output  = build + '/css';
+var css_build   = build + '/css';
 var css_release = release + '/css';
-// var css_maps    = css_output + '/maps';  // Don't work with path
-var css_sassdoc = css_output + '/sassdoc';
+// var css_maps    = css_build + '/maps';  // Don't work with path
+var css_sassdoc = css_build + '/sassdoc';
 // JS
 var js_entry   = src + '/js/index.js';
 var js_input   = src + '/js/**/*.js';
-var js_output  = build + '/js';
+var js_build   = build + '/js';
 var js_release = release + '/js';
 
 // Options
+// HTML
+var htmlminOptions = {
+    collapseWhitespace: true
+};
 // CSS
 var sassOptions = {
     errLogToConsole: true,
@@ -63,8 +71,16 @@ gulp.task('default', function () {
 gulp.task('build', gulpsync.async(['css_dev', 'js_dev']));
 gulp.task('watch', gulpsync.sync(['build', 'watch_builded']));
 gulp.task('watch_builded', gulpsync.async(['css_watch', 'js_watch']));
-gulp.task('release', gulpsync.async(['css_release', 'js_release']));
+gulp.task('release', gulpsync.async(['html_release', 'css_release', 'js_release']));
 
+
+// HTML
+gulp.task('html_release', function() {
+    return gulp
+        .src(html_input)
+        .pipe(htmlmin(htmlminOptions))
+        .pipe(gulp.dest(html_release));
+});
 
 // CSS
 gulp.task('css_dev', function () {
@@ -75,7 +91,7 @@ gulp.task('css_dev', function () {
         // .pipe(sourcemaps.write(css_maps))
         .pipe(sourcemaps.write())
         .pipe(autoprefixer())
-        .pipe(gulp.dest(css_output))
+        .pipe(gulp.dest(css_build))
         .pipe(sassdoc(sassdocOptions))
         .resume();
 });
@@ -101,7 +117,7 @@ gulp.task('js_dev', function () {
         .transform("babelify", transformPresetsOptions)
         .bundle()
         .pipe(source('index.js'))
-        .pipe(gulp.dest(js_output));
+        .pipe(gulp.dest(js_build));
 });
 gulp.task('js_watch', function () {
     return gulp
