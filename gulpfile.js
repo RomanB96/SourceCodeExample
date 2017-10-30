@@ -9,7 +9,6 @@ var sass         = require('gulp-sass');
 var sassdoc      = require('sassdoc');
 var source       = require('vinyl-source-stream');
 var sourcemaps   = require('gulp-sourcemaps');
-var stylefmt     = require('gulp-stylefmt');
 var uglify       = require('gulp-uglify');
 
 
@@ -71,7 +70,6 @@ gulp.task('release', gulpsync.async(['css_release', 'js_release']));
 gulp.task('css_dev', function () {
     return gulp
         .src(css_input)
-        .pipe(stylefmt())
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         // .pipe(sourcemaps.write(css_maps))
