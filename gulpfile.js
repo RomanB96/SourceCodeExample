@@ -8,8 +8,10 @@ var sassdoc      = require('sassdoc');
 // paths
 var src         = './src';
 var dist        = './dist';
+var release     = './release';
 var css_input   = src + '/css/**/*.scss';
 var css_output  = dist + '/css';
+var css_release = release + '/css';
 // var css_maps    = css_output + '/maps';  // Don't work with path
 var css_sassdoc = css_output + '/sassdoc'; 
 
@@ -28,9 +30,11 @@ gulp.task('default', function () {
         '\n\r' +
         'SCRIPTS' +
         '\n\r' +
-        'npm run build -> build sass' +
+        'npm run build   -> build sass' +
         '\n\r' +
-        'npm run watch -> watch sass' +
+        'npm run watch   -> watch sass' +
+        '\n\r' +
+        'npm run release -> release sass' +
         '\n\r'
     );
 });
@@ -54,4 +58,12 @@ gulp.task('watch', function() {
         .on('change', function(event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });
+});
+
+gulp.task('release', function () {
+    return gulp
+        .src(css_input)
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest(css_release));
 });
