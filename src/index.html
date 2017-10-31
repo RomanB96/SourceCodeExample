@@ -9,6 +9,8 @@
     <meta name="author" content="Roman Baran">
     <meta name="language" content="English">
     <meta name="msthemecompatible" content="no">
+
+    <noscript><link rel="stylesheet" type="text/css" href="/css/index.css" /></noscript>
 </head>
 
 <body>
@@ -103,6 +105,13 @@
     </footer>
 
     <!-- Scripts -->
+    <script type="text/javascript">
+        var cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = './css/index.css';
+        cssLink.type = 'text/css';
+        document.getElementsByTagName('head')[0].appendChild(cssLink);
+    </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
     <script type="text/javascript" src="./js/index.js" defer></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
