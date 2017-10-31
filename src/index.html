@@ -15,100 +15,104 @@
     </noscript>
 </head>
 
-<body>
+<body class="body">
 
-    <a href="#main" class="skip--hidden">Skip to main content.</a>
+    <a href="#main" class="skip skip--hidden">Skip to main content.</a>
 
-    <header class="header">
-        <h1 class="header__title">Baran Roman</h1>
+    <div class="container">
 
-        <nav class="menu">
-            <ul>
-                <li class="menu__tab">
-                    <a href="#fakeLink1" class="menu__link">Fake Link 1</a>
-                </li>
-                <li class="menu__tab">
-                    <a href="#fakeLink2" class="menu__link">Fake Link 2</a>
-                </li>
-                <li class="menu__tab">
-                    <a href="#fakeLink3" class="menu__link menu__link--disabled">Fake Link 3</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        <header class="header">
+            <h1 class="header__title">Baran Roman</h1>
 
-    <main id="main" class="main">
-        <article class="article">
-            <header>
-                <h2 class="article__title">This is an article</h2>
-            </header>
-
-            <section class="article__section cat-section">
-                <header>
-                    <h3 class="cat-section__title">This is the first section of the article with cats</h3>
-                </header>
-
-                <picture class="cat-section__picture">
-                    <source srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
-                        data-srcset="img/cat-max768.jpg 1x, img/cat-max768@2x.jpg 2x" media="(max-width: 768px)">
-                    <source srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
-                        data-srcset="img/cat-max1024.jpg 1x, img/cat-max1024@2x.jpg 2x" media="(max-width: 1024px)">
-                    <source srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
-                        data-srcset="img/cat-min1024.jpg 1x, img/cat-min1024@2x.jpg 2x" media="(min-width: 1024px)">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
-                        data-src="img/cat-base.jpg" alt="A cute cat.">
-                </picture>
-            </section>
-
-            <section class="article__section cities-section">
-                <header>
-                    <h3 class="cities-section__title">This is the second section of the article with Zurich and Munich</h3>
-                </header>
-
-                <address class="cities-section__address">
-                    <p class="cities-section__paragraph">
-                        This is
-                        <a href="https://www.google.com/maps/place/Zurich" class="cities-section__link">Zurich</a> and this is
-                        <a href="https://www.google.com/maps/place/Munich" class="cities-section__link" target="_blank">Munich (open in a new tab)</a>.
-                    </p>
-
-                    <p class="cities-section__paragraph">Contact me:</p>
-                    <ul>
-                        <li class="cities-section__contact">
-                            <a href="tel:+393334445555" class="cities-section__contact-link phone">(+39) 333 444 5555</a>
-                            <details class="cities-section__contact-details">
-                                <summary>(Fake number)</summary>
-                                <p>But you already know it</p>
-                            </details>
-                        </li>
-                        <li class="cities-section__contact">
-                            <a href="mailto:fakeATromanbaranDOTnet" class="cities-section__contact-link email">Email</a>
-                        </li>
-                        <li class="cities-section__contact">
-                            <a href="https://www.linkedin.com/in/baran-roman" class="cities-section__contact-link">Linkedin</a>
-                        </li>
-                        <li class="cities-section__contact">
-                            <a href="skype:live:roman_fake?call" class="cities-section__contact-link skype">Skype</a>
-                        </li>
-                    </ul>
-                </address>
-            </section>
-        </article>
-
-        <button class="ajaxButton" type="button">Click me to load the second article by AJAX</button>
-
-    </main>
-
-    <aside class="aside">
-        <header>
-            <h2 class="aside__title">Useless sidebar</h2>
+            <nav class="menu">
+                <ul>
+                    <li class="menu__tab">
+                        <a href="#fakeLink1" class="menu__link">Fake Link 1</a>
+                    </li>
+                    <li class="menu__tab">
+                        <a href="#fakeLink2" class="menu__link">Fake Link 2</a>
+                    </li>
+                    <li class="menu__tab">
+                        <a href="#fakeLink3" class="menu__link menu__link--disabled">Fake Link 3</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
-        <button class="apiButton" type="button">Secret button to a random API</button>
-    </aside>
 
-    <footer class="footer">
-        <p>Roman Baran © 2017</p>
-    </footer>
+        <main id="main" class="main">
+            <article class="article">
+                <header>
+                    <h2 class="article__title">This is an article</h2>
+                </header>
+
+                <section class="article__section cat-section">
+                    <header>
+                        <h3 class="cat-section__title">This is the first section of the article with cats</h3>
+                    </header>
+
+                    <picture class="cat-section__picture">
+                        <source srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
+                            data-srcset="img/cat-max768.jpg 1x, img/cat-max768@2x.jpg 2x" media="(max-width: 768px)">
+                        <source srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
+                            data-srcset="img/cat-max1024.jpg 1x, img/cat-max1024@2x.jpg 2x" media="(max-width: 1024px)">
+                        <source srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
+                            data-srcset="img/cat-min1024.jpg 1x, img/cat-min1024@2x.jpg 2x" media="(min-width: 1024px)">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E"
+                            data-src="img/cat-base.jpg" alt="A cute cat.">
+                    </picture>
+                </section>
+
+                <section class="article__section cities-section">
+                    <header>
+                        <h3 class="cities-section__title">This is the second section of the article with Zurich and Munich</h3>
+                    </header>
+
+                    <address class="cities-section__address">
+                        <p class="cities-section__paragraph">
+                            This is
+                            <a href="https://www.google.com/maps/place/Zurich" class="cities-section__link">Zurich</a> and this is
+                            <a href="https://www.google.com/maps/place/Munich" class="cities-section__link" target="_blank">Munich (open in a new tab)</a>.
+                        </p>
+
+                        <p class="cities-section__paragraph">Contact me:</p>
+                        <ul>
+                            <li class="cities-section__contact">
+                                <a href="tel:+393334445555" class="cities-section__contact-link phone">(+39) 333 444 5555</a>
+                                <details class="cities-section__contact-details">
+                                    <summary>(Fake number)</summary>
+                                    <p>But you already know it</p>
+                                </details>
+                            </li>
+                            <li class="cities-section__contact">
+                                <a href="mailto:fakeATromanbaranDOTnet" class="cities-section__contact-link email">Email</a>
+                            </li>
+                            <li class="cities-section__contact">
+                                <a href="https://www.linkedin.com/in/baran-roman" class="cities-section__contact-link">Linkedin</a>
+                            </li>
+                            <li class="cities-section__contact">
+                                <a href="skype:live:roman_fake?call" class="cities-section__contact-link skype">Skype</a>
+                            </li>
+                        </ul>
+                    </address>
+                </section>
+            </article>
+
+            <button class="ajaxButton" type="button">Click me to load the second article by AJAX</button>
+
+        </main>
+
+        <aside class="aside">
+            <header>
+                <h2 class="aside__title">Useless sidebar</h2>
+            </header>
+            <button class="apiButton" type="button">Secret button to a random API</button>
+        </aside>
+
+        <footer class="footer">
+            <p>Roman Baran © 2017</p>
+        </footer>
+
+    </div>
 
     <script type="text/javascript" src="./index.js" defer></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
