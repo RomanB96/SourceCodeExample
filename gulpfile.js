@@ -20,22 +20,24 @@ var build   = './build';
 var release = './release';
 // HTML
 var html_input   = src + '/**/*.html';
+var html_build   = build;
 var html_release = release;
 // CSS
 var css_input   = src + '/css/**/*.scss';
-var css_build   = build + '/css';
-var css_release = release + '/css';
+var css_build   = build;
+var css_release = release;
 // var css_maps    = css_build + '/maps';  // Don't work with path
 var css_sassdoc = css_build + '/sassdoc';
 // JS
 var js_entry   = src + '/js/index.js';
 var js_input   = src + '/js/**/*.js';
-var js_build   = build + '/js';
-var js_release = release + '/js';
+var js_build   = build;
+var js_release = release;
 // IMG
 var img_input   = src + '/img/**/*.*';
 var img_build   = build + '/img';
 var img_release = release + '/img';
+
 
 // Options
 // HTML
@@ -73,19 +75,32 @@ gulp.task('default', function () {
     );
 });
 
-gulp.task('build', gulpsync.async(['css_dev', 'js_dev', 'img_dev']));
+gulp.task('build', gulpsync.async(['html_dev', 'css_dev', 'js_dev', 'img_dev']));
 gulp.task('watch', gulpsync.sync(['build', 'watch_builded']));
-gulp.task('watch_builded', gulpsync.async(['css_watch', 'js_watch']));
+gulp.task('watch_builded', gulpsync.async(['html_watch', 'css_watch', 'js_watch']));
 gulp.task('release', gulpsync.async(['html_release', 'css_release', 'js_release', 'img_release']));
 
 
 // HTML
+gulp.task('html_dev', function() {
+    return gulp
+        .src(html_input)
+        .pipe(gulp.dest(html_build));
+});
+gulp.task('html_watch', function() {
+    return gulp
+        .watch(html_input, ['html_dev'])
+        .on('change', function(event) {
+            console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+        });
+});
 gulp.task('html_release', function() {
     return gulp
         .src(html_input)
         .pipe(htmlmin(htmlminOptions))
         .pipe(gulp.dest(html_release));
 });
+
 
 // CSS
 gulp.task('css_dev', function () {
