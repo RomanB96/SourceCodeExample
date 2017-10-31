@@ -1,19 +1,24 @@
+import $ from 'jquery';
+
 class Email {
 	constructor() {
 		this.selector = $('.email');
 	}
 
-	replaceLink(e) {
-		this.selector.href
-			.replace(/AT/,'&#64;')
-			.replace(/DOT/,'&#46;');
+	replaceLink(evt) {
+		let hrefReplaced = $(evt.target)
+			.attr('href')
+			.replace(/AT/,'@')
+			.replace(/DOT/,'.');
+
+		$(evt.target)
+			.attr('href', hrefReplaced);
 	}
 
 	init() {
 		try {
-			this.selector.on('click', replaceLink());
-			this.selector.on('onmouseover', replaceLink());
-			this.selector.on('onfocus', replaceLink());
+			this.selector
+				.on('click mouseover focus', this.replaceLink);
 		} catch (e) {
 			console.error(e, e.stack);
 		}
