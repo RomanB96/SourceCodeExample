@@ -1,3 +1,11 @@
+// FONTS
+$font-size-base:  16px;
+$font-size-title: 24px;
+
+// WIDTHS
+$container-width: 1280px;
+
+// MIXINS
 @mixin visuallyHidden($focusable: false) {
 	border: 0;
 	clip: rect(0 0 0 0);
