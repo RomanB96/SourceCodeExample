@@ -8,8 +8,8 @@ class Email {
 	replaceLink(evt) {
 		let hrefReplaced = $(evt.target)
 			.attr('href')
-			.replace(/AT/,'@')
-			.replace(/DOT/,'.');
+			.replace(/AT/, '@')
+			.replace(/DOT/, '.');
 
 		$(evt.target)
 			.attr('href', hrefReplaced);
