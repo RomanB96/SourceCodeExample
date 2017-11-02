@@ -1,11 +1,12 @@
-// FONTS
-$font-family: "Roboto";
+// VARS
+$breakpoint-mobile: 600px;
 
+$font-family: "Roboto";
 $font-size-base:  16px;
 $font-size-title: 24px;
 
-// WIDTHS
 $container-width: 1280px;
+
 
 // MIXINS
 @mixin visuallyHidden($focusable: false) {

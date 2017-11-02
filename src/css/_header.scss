@@ -1,5 +1,68 @@
+// VARS
+$header-padding-height: 10px;
+$header-padding-width:  0;
+
+$tab-padding: 10px;
+$tab-border:  1px solid $color-border;
+
+$menu-width-one-el:   100%;
+$menu-width-two-el:   50%;
+$menu-width-three-el: 33.3333%;
+$menu-width-four-el:  25%;
+$menu-width-five-el:  20%;
+
+
+// CLASSES
 .header {
     &__title {
         font-size: $font-size-title;
+        padding: $header-padding-height $header-padding-width;
+        text: {
+            align: center;
+            transform: uppercase;
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-mobile)  {
+    .menu {
+        &__tabs {
+            display: flex;
+        }
+        &__tab {
+            &:first-child:nth-last-child(1) {
+                flex-basis: $menu-width-one-el;
+            }
+            
+            &:first-child:nth-last-child(2),
+            &:first-child:nth-last-child(2) ~ & {
+                flex-basis: $menu-width-two-el;
+            }
+            
+            &:first-child:nth-last-child(3),
+            &:first-child:nth-last-child(3) ~ & {
+                flex-basis: $menu-width-three-el;
+            }
+            
+            &:first-child:nth-last-child(4),
+            &:first-child:nth-last-child(4) ~ & {
+                flex-basis: $menu-width-four-el;
+            }
+            
+            &:first-child:nth-last-child(5),
+            &:first-child:nth-last-child(5) ~ & {
+                flex-basis: $menu-width-five-el;
+            }
+
+            border: {
+                top: $tab-border;
+                bottom: $tab-border;
+            }
+            padding: $tab-padding;
+            text-align: center;
+        }
+        &__link {
+            text-decoration: none;
+        }
     }
 }
