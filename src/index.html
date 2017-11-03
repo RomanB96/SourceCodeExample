@@ -11,10 +11,24 @@
     <meta name="msthemecompatible" content="no">
 
     <style>
+        .skip--hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+        .container--hidden {
+            opacity: 0;
+        }
         .spinner {
             width: 40px;
             height: 40px;
-            background-color: #FFBB00;
+            background-color: #FBBC05;
+            overflow: hidden;
 
             position: absolute;
             top: 0;
@@ -48,17 +62,26 @@
     </style>
 
     <noscript>
-        <link rel="stylesheet" type="text/css" href="/css/index.css" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" />
+        <link rel="stylesheet" type="text/css" href="./css/index.css" />
+        <style>
+            .container.container--hidden {
+                opacity: 1;
+            }
+            .spinner {
+                display: none;
+            }
+        </style>
     </noscript>
 </head>
 
-<body class="body">
+<body>
 
     <div class="spinner"></div>
 
     <a href="#main" class="skip skip--hidden">Skip to main content.</a>
 
-    <div class="container">
+    <div class="container--hidden">
 
         <header class="header">
             <h1 class="header__title">Baran Roman</h1>
