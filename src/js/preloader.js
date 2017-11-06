@@ -1,26 +1,18 @@
 import $ from 'jquery';
 
-class Preloader {
-	constructor() {
-		this.selector         = $('.spinner');
-		this.container        = $('.container');
-		this.container_hidden = $('.container--hidden');
+export default function removePreloader() {
+	try {
+		let selector  = $('.spinner');
+		let container = $('.container--hidden');
+
+		container
+			.addClass('container')
+			.removeClass('container--hidden');
+
+		selector
+			.addClass('spinner--hidden');
+
+	} catch (e) {
+		console.error(e, e.stack);
 	}
-
-	remove() {
-        try {
-			this.container_hidden
-				.removeClass('container--hidden')
-				.addClass('container');
-			
-			this.selector
-				.addClass('spinner--hidden');
-		} catch (e) {
-			console.error(e, e.stack);
-		}
-    }
 }
-
-const preloader = new Preloader();
-
-export default preloader;

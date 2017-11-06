@@ -1,9 +1,9 @@
 import $ from 'jquery';
 import css from './css';
 import email from './email';
-import preloader from './preloader';
+import removePreloader from './preloader';
 
 $(document).ready(function () {
-    css.init(preloader.remove);
+    css.init(removePreloader);
     email.init();
 });
