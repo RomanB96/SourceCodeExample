@@ -4,7 +4,6 @@ class Css {
     }
 
     appendCss(callback, ...href) {
-        var allCssLoaded = [href.length - 1];
         var cssLoaded = 0;
 
         for (let i = 0; i < href.length; i++) {

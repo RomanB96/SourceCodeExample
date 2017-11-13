@@ -25,6 +25,6 @@ class Email {
 	}
 }
 
-const email = new Email();
+const email = new Email().init();
 
 export default email;
