@@ -15,9 +15,8 @@ class Css {
 
             this.cssLink.onload = function () {
                 cssLoaded++;
-                if (cssLoaded === href.length) {
+                if (cssLoaded === href.length)
                     callback();
-                }
             };
 
             document
