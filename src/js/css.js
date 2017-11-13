@@ -12,11 +12,13 @@ class Css {
             this.cssLink.href = href[i];
             this.cssLink.type = 'text/css';
 
-            this.cssLink.onload = function () {
-                cssLoaded++;
-                if (cssLoaded === href.length)
-                    callback();
-            };
+            if (callback) {
+                this.cssLink.onload = function () {
+                    cssLoaded++;
+                    if (cssLoaded === href.length)
+                        callback();
+                };
+            }
 
             document
                 .getElementsByTagName('head')[0]
