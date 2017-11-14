@@ -5,22 +5,25 @@ class Ajax {
         this.ajaxButton = $('.ajaxButton');
     }
 
-    appendStaticArticle() {         
+    appendStaticArticle() {
         $.ajax({
             type: 'GET',
             url: './html/ajax.html',
             success: function (response) {
-                $(response).appendTo('.article:last');
+                $(response)
+                    .appendTo('.article:last');
             },
-            error: function() {
-                console.log('An error occured in the AJAX call.');
+            error: function () {
+                console
+                    .log('An error occured in the AJAX call.');
             }
         });
     }
 
     init() {
         try {
-            this.ajaxButton.on('click', this.appendStaticArticle);
+            this.ajaxButton
+                .on('click', this.appendStaticArticle);
 
         } catch (e) {
             console.error(e, e.stack);
