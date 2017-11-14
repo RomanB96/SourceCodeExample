@@ -2,16 +2,15 @@ import $ from 'jquery';
 
 class Ajax {
     constructor() {
-        this.ajaxButton  = $('.ajaxButton');
-        this.lastArticle = $('.article:last-child');
+        this.ajaxButton = $('.ajaxButton');
     }
 
-    appendStaticArticle() {
+    appendStaticArticle() {         
         $.ajax({
             type: 'GET',
             url: './html/ajax.html',
             success: function (response) {
-                this.lastArticle.append(response.html);
+                $(response).appendTo('.article:last');
             },
             error: function() {
                 console.log('An error occured in the AJAX call.');
@@ -21,8 +20,7 @@ class Ajax {
 
     init() {
         try {
-            this.ajaxButton
-                .on('click', this.appendStaticArticle);
+            this.ajaxButton.on('click', this.appendStaticArticle);
 
         } catch (e) {
             console.error(e, e.stack);
