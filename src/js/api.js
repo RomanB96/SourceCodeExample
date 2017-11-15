@@ -10,10 +10,15 @@ class Api {
             .html('Loading...');
 
         $.ajax({
-            type:"GET",
-            url:"https://api.meetup.com/2/cities",
-            success: function(data) {
+            type: "GET",
+            url: "https://api.meetup.com/2/cities",
+            data: {
+                page: 5
+            },
+            success: function (data) {
                 let results = data.results;
+                $('.aside__cities')
+                    .append('<h3>Top 5 Meetups!</h3>');
                 results.forEach((result) => {
                     let node = `
                         <ul>
