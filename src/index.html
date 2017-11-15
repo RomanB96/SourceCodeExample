@@ -21,9 +21,11 @@
             position: absolute;
             width: 1px;
         }
+
         .container--hidden {
             opacity: 0;
         }
+
         .spinner {
             width: 40px;
             height: 40px;
@@ -42,19 +44,27 @@
         }
 
         @-webkit-keyframes rotateplane {
-            0% { -webkit-transform: perspective(120px) }
-            50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-            100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
         }
 
         @keyframes rotateplane {
-            0% { 
+            0% {
                 transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-            } 50% { 
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            }
+            50% {
                 transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-            } 100% { 
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+            100% {
                 transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
                 -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
             }
@@ -68,6 +78,7 @@
             .container--hidden {
                 opacity: 1;
             }
+
             .spinner {
                 display: none;
             }
@@ -113,14 +124,13 @@
                     </header>
 
                     <picture class="cat-section__picture">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-srcset="img/cat-max768.jpg 1x, img/cat-max768@2x.jpg 2x" media="(max-width: 768px)">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-srcset="img/cat-max1024.jpg 1x, img/cat-max1024@2x.jpg 2x" media="(max-width: 1024px)">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-srcset="img/cat-min1024.jpg 1x, img/cat-min1024@2x.jpg 2x" media="(min-width: 1024px)">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-src="img/cat-base.jpg" alt="A cute cat.">
+                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="img/cat-max768.jpg 1x, img/cat-max768@2x.jpg 2x"
+                            media="(max-width: 768px)">
+                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="img/cat-max1024.jpg 1x, img/cat-max1024@2x.jpg 2x"
+                            media="(max-width: 1024px)">
+                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="img/cat-min1024.jpg 1x, img/cat-min1024@2x.jpg 2x"
+                            media="(min-width: 1024px)">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/cat-base.jpg" alt="A cute cat.">
                     </picture>
                 </section>
 
@@ -167,6 +177,7 @@
             <header>
                 <h2 class="aside__title">Useless sidebar</h2>
             </header>
+            <section class="aside__cities"></section>
             <button class="apiButton" type="button">Secret button to a random API</button>
         </aside>
 
