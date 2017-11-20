@@ -3,11 +3,12 @@ import $ from 'jquery';
 class Api {
     constructor() {
         this.apiButton = $('.apiButton');
+        this.asideTitle = $('.aside__title');
+        this.asideMeetups = $('.aside__meetups');
     }
 
-    appendStaticResult() {
-        $('.apiButton')
-            .html('Loading...');
+    appendStaticResult(button, title, container) {
+        button.html('Loading...');
 
         $.ajax({
             type: "GET",
@@ -17,29 +18,25 @@ class Api {
             },
             success: function (data) {
                 let results = data.results;
-                $('.aside__cities')
-                    .append('<h3>Top 5 Meetups!</h3>');
                 results.forEach((result) => {
                     let node = `
-                        <ul>
-                            <li>Meetup zip: ${result.zip}</li>
-                            <li>City: ${result.city}</li>
-                            <li>Country: ${result.localized_country_name}</li>
-                            <li>Members count: ${result.member_count}</li>
-                            <li>Ranking: ${result.ranking}</li>
+                        <ul class="aside__meetup">
+                            <li class="meetup__info">Meetup zip: ${result.zip}</li>
+                            <li class="meetup__info">City: ${result.city}</li>
+                            <li class="meetup__info">Country: ${result.localized_country_name}</li>
+                            <li class="meetup__info">Members count: ${result.member_count}</li>
+                            <li class="meetup__info">Ranking: ${++result.ranking}</li>
                         </ul>
                     `;
-
-                    $('.aside__cities')
-                        .append(node);
+                    container.append(node);
                 });
 
-                $('.aside__title')
-                    .html('Not that useless!');
+                title.html('Not that useless!');
 
-                $('.apiButton')
-                    .html('Ta-daaan!')
-                    .off('click');
+                button
+                    .html('Ta-daaan! Top 5 Meetups!')
+                    .off('click')
+                    .attr('disabled', 'disabled');
             },
             dataType: 'jsonp',
         });
@@ -47,8 +44,9 @@ class Api {
 
     init() {
         try {
-            this.apiButton
-                .on('click', this.appendStaticResult);
+            this.apiButton.on('click', () => {
+                this.appendStaticResult(this.apiButton, this.asideTitle, this.asideMeetups);
+            });
 
         } catch (e) {
             console.error(e, e.stack);
