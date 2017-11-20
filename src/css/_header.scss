@@ -1,18 +1,3 @@
-// VARS
-$header-padding-height: 10px;
-$header-padding-width:  0;
-
-$tab-padding: 10px;
-$tab-border:  1px solid $color-border;
-
-$menu-width-one-el:   100%;
-$menu-width-two-el:   50%;
-$menu-width-three-el: 33.3333%;
-$menu-width-four-el:  25%;
-$menu-width-five-el:  20%;
-
-
-// CLASSES
 .header {
     &__title {
         font-size: $font-size-title;

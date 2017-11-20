@@ -1,11 +1,32 @@
 // VARS
 $breakpoint-mobile: 600px;
 
-$font-family: "Roboto";
+$font-family:     "Roboto";
 $font-size-base:  16px;
 $font-size-title: 24px;
 
-$container-width: 1280px;
+$body-height: 100%;
+
+$header-padding-height: 10px;
+$header-padding-width:  0;
+
+$tab-padding: 10px;
+$tab-border:  1px solid $color-border;
+
+$menu-width-one-el:   100%;
+$menu-width-two-el:   50%;
+$menu-width-three-el: 33.3333%;
+$menu-width-four-el:  25%;
+$menu-width-five-el:  20%;
+
+$container-hidden-zoom:    1;
+$container-hidden-opacity: 0;
+$container-min-height:     100%;
+$container-width:          1280px;
+
+$footer-bottom: 0;
+$footer-height: 20px;
+$footer-width:  100%;
 
 
 // MIXINS

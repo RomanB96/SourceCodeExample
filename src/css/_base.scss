@@ -1,3 +1,8 @@
+html,
+body {
+   height: $body-height;
+}
+
 .spinner {
     &--hidden {
         display: none;
@@ -16,10 +21,13 @@
     font-family: $font-family;
     font-size: $font-size-base;
     max-width: $container-width;
+    min-height: $container-min-height;
+    padding-bottom: $footer-height;
+    position: relative;
     transition: opacity 1s ease-in-out;
 
     &--hidden {
-        zoom: 1;
-        opacity: 0;
+        zoom: $container-hidden-zoom;
+        opacity: $container-hidden-opacity;
     }
 }
