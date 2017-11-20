@@ -2,5 +2,5 @@
     bottom: $footer-bottom;
     height: $footer-height;
     position: absolute;
-    width: $footer-width;
+    width: calc(#{$footer-width} - (#{$base-margin-left-right} * 2));
 }
