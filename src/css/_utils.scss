@@ -5,13 +5,13 @@ $font-family:     "Roboto";
 $font-size-base:  16px;
 $font-size-title: 24px;
 
-$base-margin-top-bottom: 0;
-$base-margin-left-right: 10px;
+$base-margin:  10px;
+$base-padding: 10px;
 
 $body-height: 100%;
 
-$header-padding-height: 10px;
-$header-padding-width:  0;
+$header-margin-height: $base-padding;
+$header-margin-width:  0;
 
 $tab-padding: 10px;
 $tab-border:  1px solid $color-border;
@@ -27,9 +27,10 @@ $container-hidden-opacity: 0;
 $container-min-height:     100%;
 $container-width:          1280px;
 
-$footer-bottom: 0;
-$footer-height: 20px;
-$footer-width:  100%;
+$footer-bottom:      0;
+$footer-height:      20px;
+$footer-line-height: $footer-height;
+$footer-width:       100%;
 
 
 // MIXINS

@@ -1,7 +1,7 @@
 .header {
     &__title {
         font-size: $font-size-title;
-        padding: $header-padding-height $header-padding-width;
+        padding: $header-margin-height $header-margin-width;
         text: {
             align: center;
             transform: uppercase;

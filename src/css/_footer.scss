@@ -1,6 +1,7 @@
 .footer {
     bottom: $footer-bottom;
     height: $footer-height;
+    line-height: $footer-line-height;
     position: absolute;
-    width: calc(#{$footer-width} - (#{$base-margin-left-right} * 2));
+    width: calc(#{$footer-width} - (#{$base-margin} * 2));
 }
